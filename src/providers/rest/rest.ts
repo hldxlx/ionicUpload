@@ -4,12 +4,6 @@ import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-/*
-  Generated class for the RestProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class RestProvider {
 
@@ -38,10 +32,10 @@ export class RestProvider {
 
   /**
    * 根据用户的手机号码和密码进行登录
-   * 
-   * @param {any} mobile 
-   * @param {any} password 
-   * @returns {Observable<string[]>} 
+   *
+   * @param {any} mobile
+   * @param {any} password
+   * @returns {Observable<string[]>}
    * @memberof RestProvider
    */
   login(mobile, password): Observable<string[]> {
@@ -52,18 +46,24 @@ export class RestProvider {
     return this.getUrlReturn(this.apiUrlUserInfo + "?userid=" + userId);
   }
 
+  //更新用户昵称
   updateNickName(userId, nickname): Observable<string[]> {
     return this.getUrlReturn(this.apiUrlUpdateNickName + "?userid=" + userId + "&nickname=" + nickname);
+  }
+
+  //保存提问
+  saveQuestion(userId,title,content):Observable<string[]>{
+    return this.getUrlReturn(this.apiUrlQuestionSave + "?userid=" + userId+ "&title=" + title+ "&content=" + content);
   }
 
 
   /**
    * 注册请求
-   * 
-   * @param {any} mobile 
-   * @param {any} nickname 
-   * @param {any} password 
-   * @returns {Observable<string[]>} 
+   *
+   * @param {any} mobile
+   * @param {any} nickname
+   * @param {any} password
+   * @returns {Observable<string[]>}
    * @memberof RestProvider
    */
   register(mobile, nickname, password): Observable<string[]> {
@@ -74,8 +74,8 @@ export class RestProvider {
    * 全局获取 HTTP 请求的方法
    * @Parry
    * @private
-   * @param {string} url 
-   * @returns {Observable<string[]>} 
+   * @param {string} url
+   * @returns {Observable<string[]>}
    * @memberof RestProvider
    */
   private getUrlReturn(url: string): Observable<string[]> {
@@ -87,10 +87,10 @@ export class RestProvider {
 
   /**
    * 处理接口返回的数据，处理成 json 格式
-   * 
+   *
    * @private
-   * @param {Response} res 
-   * @returns 
+   * @param {Response} res
+   * @returns
    * @memberof RestProvider
    */
   private extractData(res: Response) {
@@ -101,10 +101,10 @@ export class RestProvider {
 
   /**
    * 处理请求中的错误，考虑了各种情况的错误处理并在 console 中显示 error
-   * 
+   *
    * @private
-   * @param {(Response | any)} error 
-   * @returns 
+   * @param {(Response | any)} error
+   * @returns
    * @memberof RestProvider
    */
   private handleError(error: Response | any) {

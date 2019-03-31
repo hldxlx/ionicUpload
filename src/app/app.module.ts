@@ -21,9 +21,10 @@ import {IonicStorageModule} from '@ionic/storage';
 
 //导入四个外部加载进来的组件，具体的安装方法在 09-01 章节
 import { File } from '@ionic-native/file';
-import { Transfer, TransferObject } from '@ionic-native/transfer';
+import { Transfer } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
+import {QuestionPage} from "../pages/question/question";
 
 @NgModule({
   declarations: [
@@ -37,14 +38,15 @@ import { Camera } from '@ionic-native/camera';
     LoginPage,
     RegisterPage,
     UserPage,
-    HeadfacePage
+    HeadfacePage,
+    QuestionPage
   ],
   imports: [
     BrowserModule,
     HttpModule, //全局需要导入 HTTP
     IonicModule.forRoot(MyApp,{
       backButtonText: '返回',
-    }), 
+    }),
     IonicStorageModule.forRoot() //全局定义 storage 的模块
   ],
   bootstrap: [IonicApp],
@@ -59,7 +61,8 @@ import { Camera } from '@ionic-native/camera';
     LoginPage,
     RegisterPage,
     UserPage,
-    HeadfacePage
+    HeadfacePage,
+    QuestionPage
   ],
   providers: [
     StatusBar,

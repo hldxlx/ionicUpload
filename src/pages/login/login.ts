@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, LoadingController, ToastController } from 'ionic-angular';
+import { NavController, NavParams, ViewController, LoadingController, ToastController } from 'ionic-angular';
 import { BaseUI } from '../../common/baseui';
 import { RestProvider } from '../../providers/rest/rest';
 import { Storage } from '@ionic/storage';
@@ -58,7 +58,7 @@ export class LoginPage extends BaseUI {
 
   /**
    * 关闭当前页面的方法
-   * 
+   *
    * @memberof LoginPage
    */
   dismiss() {
