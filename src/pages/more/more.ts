@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, ModalController, LoadingController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { Storage } from '@ionic/storage';
 import { BaseUI } from '../../common/baseui';

@@ -23,7 +23,10 @@ export class RestProvider {
   private apiUrlQuestionSave = 'https://imoocqa.gugujiankong.com/api/question/save';
   private apiUrlQuestionList = 'https://imoocqa.gugujiankong.com/api/question/list?index=1&number=10';
   private apiUrlGetQuestion = "https://imoocqa.gugujiankong.com/api/question/get";
+  private apiUrlGetQuestionWithUser = "https://imoocqa.gugujiankong.com/api/question/getwithuser";
   private apiUrlAnswer = "https://imoocqa.gugujiankong.com/api/question/answer";
+  private apiUrlSaveFavourite = "https://imoocqa.gugujiankong.com/api/question/savefavourite";
+
 
   //* 注意：因为课程是主要讲解 ionic 的技术点
   //* 安全性方面你需要自己去做详细的设计和处理
@@ -56,6 +59,20 @@ export class RestProvider {
     return this.getUrlReturn(this.apiUrlQuestionSave + "?userid=" + userId+ "&title=" + title+ "&content=" + content);
   }
 
+  //请求首页的 feeds 流
+  getFeeds():Observable<string[]>{
+    return this.getUrlReturn(this.apiUrlFeeds);
+  }
+
+  //获取问题的详情
+  getQestion(id):Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlGetQuestion+ "?id=" + id);
+  }
+
+  //获取问题的详情 传递 userid 获取到当前用户有没有关注此问题
+  getQestionWithUser(questionId,userId):Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlGetQuestionWithUser+ "?id=" + questionId+ "&userId=" + userId);
+  }
 
   /**
    * 注册请求

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, ModalController, ToastController, LoadingController } from 'ionic-angular';
+import {NavController, NavParams, ViewController, ModalController, ToastController, LoadingController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { BaseUI } from '../../common/baseui';
 import { RestProvider } from '../../providers/rest/rest';
 import {HeadfacePage} from '../headface/headface';
- 
-//@IonicPage()
+
+
 @Component({
   selector: 'page-user',
   templateUrl: 'user.html',
