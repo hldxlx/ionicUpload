@@ -82,6 +82,11 @@ export class RestProvider {
     return this.getUrlReturn(this.apiUrlAnswer + "?userid=" + userId + "&questionid=" + questionId + "&content=" + content);
   }
 
+  getQuestions(): Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlQuestionList);
+  }
+
+
   /**
    * 注册请求
    *
