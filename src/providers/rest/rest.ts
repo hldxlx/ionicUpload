@@ -74,6 +74,14 @@ export class RestProvider {
     return this.getUrlReturn(this.apiUrlGetQuestionWithUser+ "?id=" + questionId+ "&userId=" + userId);
   }
 
+  saveFavourite(questionId,userId):Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlSaveFavourite+"?questionId="+questionId+ "&userId=" + userId);
+  }
+
+  answer(userId, questionId, content): Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlAnswer + "?userid=" + userId + "&questionid=" + questionId + "&content=" + content);
+  }
+
   /**
    * 注册请求
    *

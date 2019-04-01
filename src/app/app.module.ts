@@ -26,6 +26,7 @@ import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
 import {QuestionPage} from "../pages/question/question";
 import {DetailsPage} from "../pages/details/details";
+import {AnswerPage} from "../pages/answer/answer";
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {DetailsPage} from "../pages/details/details";
     UserPage,
     HeadfacePage,
     QuestionPage,
-    DetailsPage
+    DetailsPage,
+    AnswerPage
   ],
   imports: [
     BrowserModule,
@@ -65,7 +67,8 @@ import {DetailsPage} from "../pages/details/details";
     UserPage,
     HeadfacePage,
     QuestionPage,
-    DetailsPage
+    DetailsPage,
+    AnswerPage
   ],
   providers: [
     StatusBar,
